@@ -15,7 +15,7 @@ public class PruebaDniParaElExamen {
 
 		Scanner teclado = new Scanner(System.in);
 
-		Pattern patron = Pattern.compile("[0-9]{8}[A-Z]");
+		Pattern patron = Pattern.compile("[0-9]{8}[A-Z]{1}");
 
 		char validacionLetra = ' ';
 
@@ -24,6 +24,8 @@ public class PruebaDniParaElExamen {
 
 		Matcher texto = patron.matcher(posibleDni);
 
+		System.out.println(texto);
+		
 		if (texto.matches()) {
 
 			System.out.println("El formato del dni es valido.");

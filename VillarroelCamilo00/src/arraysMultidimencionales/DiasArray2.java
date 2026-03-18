@@ -9,7 +9,7 @@ public class DiasArray2 {
 
 	public static void main(String[] args) {
 
-		int mayorCalor = 0, menorCalor = 0, amplitud, contador = 0;
+		int mayorCalor = 0, menorCalor = 0, amplitud;
 
 		int[][] temperaturas = new int[12][30];
 
@@ -56,16 +56,10 @@ public class DiasArray2 {
 			for (int mes3 = 0; mes3 < 12; mes3++) {
 
 				menorCalor = temperaturas[mes3][0];
-				
-					while(contador<30) {
-						contador++;
-						if(menorCalor>)
-						
-						
-					}
 
-				
 			}
+
 		}
+		
 	}
 }

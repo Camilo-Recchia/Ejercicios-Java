@@ -5,7 +5,8 @@
  */
 package ada;
 
-import java.util.Scanner;
+import java.awt.*;
+import java.util.*;
 
 public class EjercicioTablas04 {
 
@@ -18,15 +19,16 @@ public class EjercicioTablas04 {
 
 		for (int i = 0; i < lado; i++) {
 
-			System.out.print(" * ");
+			System.out.print("");
 
-			for (int j = 0; j <= lado; j++) {
+			for (int j = 0; j < lado; j++) {
 
 				System.out.print(" * ");
 
 			}
-			System.err.println("");
+			System.out.println("");
 		}
+		teclado.close();
 
 	}
 

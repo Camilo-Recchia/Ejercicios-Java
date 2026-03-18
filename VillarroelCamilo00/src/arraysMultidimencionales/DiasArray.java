@@ -5,6 +5,8 @@
  */
 package arraysMultidimencionales;
 
+import java.util.Arrays;
+
 public class DiasArray {
 
 	public static void main(String[] args) {
@@ -81,6 +83,8 @@ public class DiasArray {
 
 			}
 		}
+		
+		Arrays.fill(temperaturas[1], 1);
 
 		System.out.printf("\n\nEl dia más caluroso fue el %d de %s , con una temperatura de %dº", diaMasCaluroso,
 				mesDiaMasCaluroso, temperaturaDiaMasCaluroso);

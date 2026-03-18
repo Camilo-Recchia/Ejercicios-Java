@@ -96,7 +96,8 @@ public class Ejercicio2 {
 
 				cantidadTotal = cantidadMusculacion * 20 + cantidadYoga * 15 + cantidadFitness * 10;
 
-				System.out.println("El importe total (sin iva) de las matrículas realizadas es: " + cantidadTotal+"\n");
+				System.out
+						.println("El importe total (sin iva) de las matrículas realizadas es: " + cantidadTotal + "\n");
 
 			} else if (menuOpciones < 1 || menuOpciones > 4) {
 				System.out.println("\nOpción no válida. Intente de nuevo.\n");

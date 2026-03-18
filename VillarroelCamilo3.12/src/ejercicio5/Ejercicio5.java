@@ -15,12 +15,14 @@ public class Ejercicio5 {
 		System.out.print("Escriba la frase de la que quiere comprobar si tiene un palindromo: ");
 		fraseOG = teclado.nextLine();
 
-		for (int i = (fraseOG.length() - 1); i >= 0; i--) {
+		String limpia = fraseOG.replace(" ", "");
 
-			fraseInversa = fraseInversa + fraseOG.charAt(i);
+		for (int i = (limpia.length() - 1); i >= 0; i--) {
+
+			fraseInversa = fraseInversa + limpia.charAt(i);
 		}
 
-		comprobacion = fraseOG.equalsIgnoreCase(fraseInversa);
+		comprobacion = limpia.equalsIgnoreCase(fraseInversa);
 
 		if (comprobacion == true) {
 
