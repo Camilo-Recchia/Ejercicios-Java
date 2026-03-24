@@ -60,6 +60,7 @@ public class HushSet {
 
 		System.out.println("Sumando los dos conjuntos...");
 		try {
+			conjunto.addAll(conjunto2);
 
 		} catch (UnsupportedOperationException ex1) {
 
@@ -83,7 +84,6 @@ public class HushSet {
 
 		}
 
-		conjunto.addAll(conjunto2);
 		System.out.println();
 		System.out.printf("Luego de sumar los dos conjuntos creados. Como resultado el conjunto 1 quedo asi: \n%s",
 				conjunto.toString());

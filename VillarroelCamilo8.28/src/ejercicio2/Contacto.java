@@ -1,6 +1,7 @@
 package ejercicio2;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Contacto {
 
@@ -26,6 +27,13 @@ public class Contacto {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
+	/**
+	 * @return the telefono
+	 */
+	public String getTelefono() {
+		return telefono;
+	}
+
 	public Contacto() {
 		this(nombres[(int) (Math.random() * 90)], String.valueOf((int) (Math.random() * 25000000) + 600000000),
 				nombres[(int) (Math.random() * 90)] + "@gmail.com", LocalDate.of((int) (Math.random() * 26) + 2000,
@@ -33,18 +41,20 @@ public class Contacto {
 	}
 
 	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (!(o instanceof Contacto))
-			return false;
-		Contacto c = (Contacto) o;
-		return telefono.equals(c.telefono);
+	public int hashCode() {
+		return Objects.hash(telefono);
 	}
 
 	@Override
-	public int hashCode() {
-		return telefono.hashCode();
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Contacto other = (Contacto) obj;
+		return Objects.equals(telefono, other.telefono);
 	}
 
 	@Override
