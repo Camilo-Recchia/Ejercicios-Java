@@ -17,48 +17,44 @@ public class Ejercicio1 {
 		Operaciones numero_Vueltas = Operaciones.NUMERO_VUELTAS;
 		Operaciones area_Circulo = Operaciones.AREA_CIRCULO;
 
-		int masa, tiempo;
-
-		double x, frecuencia, radio, valorOperacion, valorFuerzaPeso, valorVueltas, areaCirculo;
-
-		// G es la constante de la gravedad y Pi es de pi.
-		final double PI = 3.1415926535, G = 9.8;
-
 		System.out.println("CÁLCULO EXPRESIONES FÍSICAS/MATEMÁTICAS\n-----------------------------------");
 
 		System.out.print("Introduce el valor de X: ");
-		x = teclado.nextInt();
+		double x = teclado.nextInt();
 
 		System.out.print("Introduce la masa (kg): ");
-		masa = teclado.nextInt();
+		int masa = teclado.nextInt();
 
 		System.out.print("Introduce el tiempo (s): ");
-		tiempo = teclado.nextInt();
+		int tiempo = teclado.nextInt();
 
 		System.out.print("Introduce la frecuencia (hz): ");
-		frecuencia = teclado.nextDouble();
+		double frecuencia = teclado.nextDouble();
 
 		System.out.print("Introduce el radio del círculo (m): ");
-		radio = teclado.nextDouble();
+		double radio = teclado.nextDouble();
 
 		// Calculo de la Operación de Primer Grado
-		valorOperacion = (((x + (x / 4))) / ((6 - (x / 2))));
+		double valorOperacion = (((x + (x / 4))) / ((6 - (x / 2))));
 
 		// Calculo de la Fuerza Peso
-		valorFuerzaPeso = masa * G;
+		double valorFuerzaPeso = masa * Math.PI;
 
 		// Calculo del Numero de Vueltas
-		valorVueltas = (int) (frecuencia * tiempo); // Aqui utilice un casting para transformar el resultado de un
-													// double a un int
+		double valorVueltas = (int) (frecuencia * tiempo); // Aqui utilice un casting para transformar el resultado de
+															// un
+		// double a un int
 
 		// Calculo Area
-		areaCirculo = PI * radio * radio;
+		double areaCirculo = Math.PI * radio * radio;
 
 		System.out.println("\nRESULTADOS\n----------");
 		System.out.println(operacion + ": " + valorOperacion);
 		System.out.println(fuerza_Peso + ": " + valorFuerzaPeso);
 		System.out.println(numero_Vueltas + ": " + valorVueltas);
 		System.out.println(area_Circulo + ": " + areaCirculo);
+
+		teclado.close();
 
 	}
 
