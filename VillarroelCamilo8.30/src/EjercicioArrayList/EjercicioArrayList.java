@@ -224,7 +224,7 @@ public class EjercicioArrayList {
 	// Generador de archivos generico
 	public static void generadorDeArchivosPorMedia(double[] medias, String nombre) {
 
-		try (FileWriter archivo = new FileWriter(nombre)) {
+		try (FileWriter archivo = new FileWriter("Archivos de txt 1" + File.separator + nombre)) {
 
 			archivo.append("Mates: " + medias[0] + "\nLengua: " + medias[1] + "\nFisica: " + medias[2] + "\nQuimica: "
 					+ medias[3] + "\nIngles: " + medias[4]);
@@ -237,7 +237,7 @@ public class EjercicioArrayList {
 
 	// Genera un archivo
 	public static void generadorDeArchivos(ArrayList<Registro> list, String nombre) {
-		try (FileWriter archivo = new FileWriter(nombre)) {
+		try (FileWriter archivo = new FileWriter("Archivos de txt 1" + File.separator + nombre)) {
 
 			for (int i = 0; i < list.size(); i++) {
 				int[] notas = list.get(i).getNotas();
