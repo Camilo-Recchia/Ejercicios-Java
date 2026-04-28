@@ -9,17 +9,28 @@ public class Ejercicio1A {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
 
-		System.out.print("Escribe la ruta: ");
-		try {
-			muestraInfoRuta(new File(teclado.nextLine()));
-		} catch (FileNotFoundException ex) {
-			System.out.printf("%s", ex.getMessage());
+		String nom = "DEFAULT";
+
+		while (!nom.equals("")) {
+
+			System.out.print("\n\nEscribe la ruta: ");
+			nom = teclado.nextLine();
+			try {
+				muestraInfoRuta(new File(nom));
+			} catch (FileNotFoundException ex) {
+				System.out.printf("%s", ex.getMessage());
+			}
+
 		}
 
 		teclado.close();
 	}
 
 	public static void muestraInfoRuta(File ruta) throws FileNotFoundException {
+
+		if (!ruta.exists()) {
+			throw new FileNotFoundException("El fichero no fue encontrado");
+		}
 
 		if (ruta.isFile()) {
 			System.out.println("Archivo: " + ruta.getName());
@@ -45,9 +56,6 @@ public class Ejercicio1A {
 					System.out.println(" - " + f.getName());
 				}
 			}
-		}
-		if (!ruta.exists()) {
-			throw new FileNotFoundException("El fichero no fue encontrado");
 		}
 
 	}

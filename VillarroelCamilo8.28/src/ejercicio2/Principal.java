@@ -12,12 +12,12 @@ public class Principal {
 
 		Scanner teclado = new Scanner(System.in);
 
-		Contacto c;
+		Alumno c;
 
-		LinkedList<Contacto> list = new LinkedList<Contacto>();
+		LinkedList<Alumno> list = new LinkedList<Alumno>();
 
 		for (int i = 0; i < Math.random() * 10 + 20; i++) {
-			c = new Contacto();
+			c = new Alumno();
 
 			list.add(c);
 		}
@@ -57,7 +57,7 @@ public class Principal {
 		return teclado.nextInt();
 	}
 
-	public static Contacto ingresarContacto(LinkedList<Contacto> lista, Scanner teclado) {
+	public static Alumno ingresarContacto(LinkedList<Alumno> lista, Scanner teclado) {
 		System.out.print("\n\nIngresando nuevo contacto:");
 		System.out.print("\nNombre: ");
 		teclado.nextLine();
@@ -75,19 +75,19 @@ public class Principal {
 
 		LocalDate naci = LocalDate.of(anno, mes, dia);
 
-		Contacto c = new Contacto(nombre, telefono, email, naci);
+		Alumno c = new Alumno(nombre, telefono, email, naci);
 
 		return c;
 	}
 
-	public static String consultarContacto(LinkedList<Contacto> lista, Scanner teclado) {
+	public static String consultarContacto(LinkedList<Alumno> lista, Scanner teclado) {
 		System.out.print("\n\nIngrese el nombre del contacto: ");
 		teclado.nextLine();
 		String nomb = teclado.nextLine();
 
-		Contacto c = null;
+		Alumno c = null;
 
-		for (Contacto i : lista) {
+		for (Alumno i : lista) {
 			if (nomb.toLowerCase().equals(i.getNombre().toLowerCase())) {
 				c = i;
 			}
@@ -98,7 +98,7 @@ public class Principal {
 		return c.toString();
 	}
 
-	public static void mostrarDatos(LinkedList<Contacto> list) {
+	public static void mostrarDatos(LinkedList<Alumno> list) {
 
 		Collections.sort(list, new AegndaOrdenador());
 
@@ -109,10 +109,10 @@ public class Principal {
 		}
 	}
 
-	public static void mostrarFecha(LinkedList<Contacto> list, Scanner teclado) {
+	public static void mostrarFecha(LinkedList<Alumno> list, Scanner teclado) {
 		System.out.print("\nAño de nacimiento:  ");
 		int anno = teclado.nextInt();
-		for (Contacto i : list) {
+		for (Alumno i : list) {
 			if (i.getNacimiento().getYear() == anno) {
 				System.out.printf("\n%s", i.toString());
 			}

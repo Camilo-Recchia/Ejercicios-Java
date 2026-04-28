@@ -6,7 +6,7 @@ import java.util.Set;
 
 import ejercicio2.*;
 
-public class Cliente {
+public class Alumno {
 
 	protected static String[] nombres = { "Pepe", "Juan", "Lucas", "Mateo", "Santiago", "Valentino", "Thiago",
 			"Benjamin", "Joaquin", "Tomas", "Martin", "Nicolas", "Facundo", "Franco", "Agustin", "Lautaro", "Maximo",
@@ -25,10 +25,10 @@ public class Cliente {
 	protected int codigoCliente;
 	protected String nombre;
 	protected String email;
-	protected ArrayList<Contacto> telefono = new ArrayList<Contacto>();
+	protected ArrayList<Alumno> telefono = new ArrayList<Alumno>();
 	protected HashMap<String, Integer> compras = new HashMap<String, Integer>();
 
-	public Cliente(int codigoCliente, String nombre, String email, ArrayList<Contacto> telefono, String nombreProducto,
+	public Alumno(int codigoCliente, String nombre, String email, ArrayList<Alumno> telefono, String nombreProducto,
 			int cantidadProducto) throws IllegalArgumentException {
 
 		if (codigoCliente >= MAX_CLIENTES) {
@@ -42,7 +42,7 @@ public class Cliente {
 		this.compras.put(nombreProducto, Integer.valueOf(cantidadProducto));
 	}
 
-	protected void addTelefono(Contacto c) {
+	protected void addTelefono(Alumno c) {
 		telefono.add(c);
 	}
 

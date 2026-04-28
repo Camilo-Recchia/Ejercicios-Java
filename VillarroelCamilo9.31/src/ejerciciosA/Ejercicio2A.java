@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Ejercicio2A {
@@ -57,8 +58,8 @@ public class Ejercicio2A {
 				if (f.isDirectory()) {
 					System.out.println(" - " + f.getName());
 					if (info) {
-						System.out.printf(" - espacio: %d - Ultima modificacion: %d\n", f.getTotalSpace(),
-								f.lastModified());
+						System.out.printf(" - espacio: %d - Ultima modificacion: %s\n", f.getTotalSpace(),
+								new Date(f.lastModified()));
 
 					}
 				}
@@ -69,8 +70,8 @@ public class Ejercicio2A {
 				if (f.isFile()) {
 					System.out.println(" - " + f.getName());
 					if (info) {
-						System.out.printf(" - espacio: %d - Ultima modificacion: %d\n", f.getTotalSpace(),
-								f.lastModified());
+						System.out.printf(" - espacio: %d - Ultima modificacion: %s\n", f.getTotalSpace(),
+								new Date(f.lastModified()));
 
 					}
 				}

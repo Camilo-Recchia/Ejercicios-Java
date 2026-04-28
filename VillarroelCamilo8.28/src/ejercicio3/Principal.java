@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 import ejercicio2.AegndaOrdenador;
-import ejercicio2.Contacto;
+import ejercicio2.Alumno;
 
 public class Principal {
 
@@ -15,14 +15,14 @@ public class Principal {
 
 		Scanner teclado = new Scanner(System.in);
 
-		Contacto c;
+		Alumno c;
 
-		LinkedHashSet<Contacto> list = new LinkedHashSet<Contacto>();
+		LinkedHashSet<Alumno> list = new LinkedHashSet<Alumno>();
 
 		int cantidad = (int) (Math.random() * 11) + 20;
 
 		for (int i = 0; i < cantidad; i++) {
-			c = new Contacto();
+			c = new Alumno();
 
 			list.add(c);
 		}
@@ -61,7 +61,7 @@ public class Principal {
 		return teclado.nextInt();
 	}
 
-	public static void ingresarContacto(LinkedHashSet<Contacto> lista, Scanner teclado) {
+	public static void ingresarContacto(LinkedHashSet<Alumno> lista, Scanner teclado) {
 		System.out.print("\n\nIngresando nuevo contacto:");
 		System.out.print("\nNombre: ");
 		teclado.nextLine();
@@ -79,17 +79,17 @@ public class Principal {
 
 		LocalDate naci = LocalDate.of(anno, mes, dia);
 
-		Contacto c = new Contacto(nombre, telefono, email, naci);
+		Alumno c = new Alumno(nombre, telefono, email, naci);
 
 		lista.add(c);
 	}
 
-	public static String consultarContacto(LinkedHashSet<Contacto> lista, Scanner teclado) {
+	public static String consultarContacto(LinkedHashSet<Alumno> lista, Scanner teclado) {
 		System.out.print("\n\nIngrese el nombre del contacto: ");
 		teclado.nextLine();
 		String nomb = teclado.nextLine();
 
-		for (Contacto i : lista) {
+		for (Alumno i : lista) {
 			if (nomb.equalsIgnoreCase(i.getNombre())) {
 				return i.toString();
 			}
@@ -98,21 +98,21 @@ public class Principal {
 		return "Contacto no encontrado";
 	}
 
-	public static void mostrarDatos(LinkedHashSet<Contacto> list) {
+	public static void mostrarDatos(LinkedHashSet<Alumno> list) {
 
-		LinkedList<Contacto> lista = new LinkedList<Contacto>(list);
+		LinkedList<Alumno> lista = new LinkedList<Alumno>(list);
 
 		Collections.sort(lista, new AegndaOrdenador());
 
-		for (Contacto c : lista) {
+		for (Alumno c : lista) {
 			System.out.println(c);
 		}
 	}
 
-	public static void mostrarFecha(LinkedHashSet<Contacto> list, Scanner teclado) {
+	public static void mostrarFecha(LinkedHashSet<Alumno> list, Scanner teclado) {
 		System.out.print("\nAño de nacimiento:  ");
 		int anno = teclado.nextInt();
-		for (Contacto i : list) {
+		for (Alumno i : list) {
 			if (i.getNacimiento().getYear() == anno) {
 				System.out.printf("\n%s", i.toString());
 			}
